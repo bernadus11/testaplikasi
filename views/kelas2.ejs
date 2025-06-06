@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Absensi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/kanisius.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 250px;
+        background: rgb(19, 92, 86);
+        color: white;
+        min-height: 100vh;
+        padding: 20px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .main-content {
+        margin-left: 260px;
+        padding: 20px;
+        flex: 1;
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    /* Responsif untuk tablet */
+    @media screen and (max-width: 992px) {
+        .sidebar {
+            width: 200px;
+        }
+        .main-content {
+            margin-left: 210px;
+        }
+    }
+
+    /* Responsif untuk perangkat kecil */
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            min-height: auto;
+            padding: 10px;
+            position: relative;
+        }
+        .sidebar ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+        }
+        .sidebar ul li {
+            display: inline;
+            margin: 5px;
+        }
+        .main-content {
+            margin-left: 0;
+            padding: 15px;
+        }
+    }
+    .btn{
+            margin-top: 10px;
+        }
+    /* Responsif untuk ponsel */
+    @media screen and (max-width: 480px) {
+        .navbar-brand {
+            font-size: 16px;
+        }
+        .form-control, .btn {
+            font-size: 14px;
+            padding: 8px;
+        }
+        .table {
+            font-size: 12px;
+        }
+    }
+</style>
+<body>
+   <!-- Sidebar -->
+   <div class="sidebar">
+    <h4 class="text-center">Dashboard</h4>
+    <ul class="nav flex-column">
+        <li class="nav-item"><a href='' class="nav-link text-white">📊 Absensi</a></li>
+        <li class="nav-item"><a href='/' class="nav-link text-white">🚪 Logout</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <nav class="navbar navbar-light bg-light mb-3 p-3">
+        <span class ="navbar-brand mb-0 h1"><img src="img/kanisius.png" alt="Bootstrap" width="60" height="55"> Absensi Kelas SD Kanisius Kaliwinong</span>
+    </nav>
+    <select id="kelasDropdown" onchange="window.location.href=this.value;">
+        <option value="#">Pilih Kelas</option>
+        <option value="/kelas1">Kelas 1</option>
+        <option value="/kelas2">Kelas 2</option>
+        <option value="/kelas3">Kelas 3</option>
+        <option value="/kelas4">Kelas 4</option>
+        <option value="/kelas5">Kelas 5</option>
+        <option value="/kelas6">Kelas 6</option>
+  </select>
+    <div class="container">
+    <h1><%= title %></h1>
+        <table class="table">
+          <thead>
+            <tr>
+                <th>No Absen</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <th>Tanggal</th>
+                <th>Keterangan</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let user2 of users) { %>
+                <tr>
+                    <td><%= user2.id %></td>
+                    <td><%= user2.nama %></td>
+                    <td><%= user2.kelas %></td>
+                    <td><%= new Date(user2.created_at).toLocaleDateString('id-ID') %></td>
+                    <td><%= user2.keterangan %></td>
+
+                    <td>
+                        <!-- Tombol Edit -->
+                        <a href="/edit2/<%= user2.id %>" class="btn btn-primary btn-sm">Edit</a>
+                        
+                        <!-- Tombol Hapus -->
+                        <form action="/delete2/<%= user2.id %>" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+          </table>
+          <form action="/tambah2" method="POST">
+            <h3>Tambah Murid Baru</h3>
+            <div class="row mb-3">
+                <label for="id" class="col-sm-2 col-form-label">No Absen</label>
+                <div class="col-sm-10">
+                  <input type="text" name="id" class="form-control">
+                </div>
+              </div>
+                <div class="row mb-3">
+                  <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="nama" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Kelas</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="kelas" class="form-control">
+                  </div>
+                </div>
+                <input type="submit" class="btn btn-danger" value="Tambah">
+          </form>
+          <form id="laporanForm" method="get">
+            <div class="row mb-3">
+                <label for="kelas" class="col-sm-2 col-form-label">Pilih Kelas</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="kelas" id="kelas">
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="1">Kelas 1</option>
+                        <option value="2">Kelas 2</option>
+                        <option value="3">Kelas 3</option>
+                        <option value="4">Kelas 4</option>
+                        <option value="5">Kelas 5</option>
+                        <option value="6">Kelas 6</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success" value="Lihat Laporan">
+        </form>
+        
+        <script>
+            const form = document.getElementById('laporanForm');
+            const kelasSelect = document.getElementById('kelas');
+        
+            form.addEventListener('submit', function(event) {
+                const selectedKelas = kelasSelect.value;
+                if (!selectedKelas) {
+                    alert('Silakan pilih kelas terlebih dahulu!');
+                    event.preventDefault(); // Jangan submit kalau belum pilih
+                    return;
+                }
+        
+                // Set action berdasarkan kelas yang dipilih
+                form.action = `/laporan/${selectedKelas}`;
+            });
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>  

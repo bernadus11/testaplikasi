@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profil SD Kanisius Kaliwinong</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/kanisius.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link animasi animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+    html {
+      scroll-behavior: smooth;
+  }
+      
+  .navbar-nav .nav-item .nav-link:hover {
+      color: #fff; /* Warna teks saat hover */
+  }
+  .nav-item {
+      font-family:Arial, Helvetica, sans-serif;
+      margin-top: 7px;
+      font-weight: 600;
+  }
+  .carousel-item {
+      height: 100vh; /* Tinggi 100% dari viewport */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Warna hitam transparan */
+      z-index: 1;
+    }
+  
+    .carousel-item {
+      position: relative;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  
+    /* Pastikan teks berada di atas overlay */
+    .carousel-caption {
+      position: relative;
+      z-index: 2;
+    }
+    
+  section {
+      padding-top: 50px;
+      padding-bottom: 50px;
+  }
+  .container h1{
+      font-size: 35px;
+  }
+  .project {
+      background-color: #17a2b8;
+      opacity: 95%;
+      padding-top: 5px;
+      padding-bottom: 10px;
+      border-radius: 15px;
+      border: 1px solid #06181b;
+  }
+  .custom-bg {
+    background-color: #17a2b8; /* Warna aqua */
+    color: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  .custom-bg::before {
+    content: "";
+    background: url('img/school.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+  .custom-content {
+    position: relative;
+    z-index: 2;
+  }
+  footer {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: white;
+      text-align: center;
+  }
+</style>
+</head>
+  <body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg bg-secondary fixed-top animate__animated animate__fadeInDown">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/kanisius.png" alt="Bootstrap" width="50" height="43" class="d-inline-block align-text-top">
+          </a><span class="fw-bold text-white">SD Kanisius Kaliwinong</span>
+      <button class="navbar-toggler bg-white shadow-none"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Beranda</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#tentang">Tentang kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#program">Program</a>
+            <li class="nav-item">
+                <a class="nav-link active" href="#layanan">Layanan</a>
+          </li>
+            <li class="nav-item">
+                <a class="btn btn-danger" href="/kelas1">Absensi</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+   <!-- cover image-->
+   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active bg-cover" style="background-image: url('img/10.jpg');">
+      </div>
+      <div class="carousel-item bg-cover" style="background-image: url('img/6.jpg');">
+      </div>
+      <div class="carousel-item bg-cover" style="background-image: url('img/gereja.jpeg');">
+      </div>
+    </div>
+  </div>
+  <!-- cover image-->
+  <!--hero-->
+  <section class="hero" id="tentang">
+    <div class="container bg-success rounded">
+      <div class="row align-items-center">
+        <!-- Kolom teks -->
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+          <h1>Profil SD Kanisius <span class="text-danger">Kaliwinong</span><br>2025</h1>
+          <p>SD Kanisius Kaliwinong memiliki reputasi yang baik di wilayah Bandungan, Semarang. SD Kanisius Kaliwinong dikenal dengan kualitas pendidikan yang tinggi dan berfokus pada pengembangan karakter dan nilai-nilai luhur. SD Kanisius Kaliwinong merupakan pilihan tepat bagi orang tua yang menginginkan pendidikan berkualitas dan berwawasan luas untuk anak-anak mereka.</p>
+          <a href="https://maps.app.goo.gl/rM3DLkPxpNVUrWoX8" target="_blank" class="btn btn-primary">Lokasi</a>
+          <a href="#layanan" class="btn btn-primary">Layanan</a>
+        </div>
+        <!-- Kolom gambar -->
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+          <img src="img/sekolah.jpeg" alt="hero image" class="img-fluid mb-2 mt-2 shadow">
+        </div>
+      </div>
+    </div>
+</section>
+  <!-- ekstrakurikuler -->
+   <section class="project" id="program">
+    <div class="container">
+      <div class="project-box">
+        <h1 class="fw-bold mb-3 text-center">Ekstrakurikuler</h1>
+        <div class="row justify-content-center d-flex bg-light rounded">
+          <div class="col-md-4 shadow-lg p-1 rounded">
+            <img src="img/5.jpg" alt="hero image" width="100%">
+            <h4 class="text-center">Wushu</h4>
+            <p class="text-center">Wushu adalah seni bela diri tradisional dari Cina yang melibatkan gerakan fisik dan mental yang kompleks dan menarik.</p>
+          </div>
+          <div class="col-md-4 shadow-lg p-1 rounded">
+            <img src="img/pramuka.jpeg" alt="hero image" width="100%">
+            <h4 class="text-center">Pramuka</h4>  
+            <p class="text-center">Pramuka di SD Kanisius Kaliwinong membentuk karakter disiplin, mandiri, dan bekerja sama melalui kegiatan kepramukaan yang seru dan mendidik. </p>
+          </div>
+          <div class="col-md-4 shadow-lg p-1 rounded">
+            <img src="img/drumband.jpeg" alt="hero image" width="100%">
+            <h4 class="text-center">Drumband</h4>
+            <p class="text-center">Drumband di SD Kanisius Kaliwinong, ekstrakurikuler yang memberikan pengalaman musik yang menarik dan menginspirasi siswa-siswi untuk belajar lebih banyak tentang musik dan seni.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+   <!-- ekstrakurikuler -->
+  <!--layanan-->
+ <section class="content" id="layanan">
+  <div class="container mt-5">
+    <div class="custom-bg text-center">
+        <div class="custom-content">
+            <h4>SD Kanisius Kaliwinong menerapkan Digitalisasi Sekolah</h4>
+            <h2 class="fw-bold">Terintegrasi dengan Form PPDB</h2>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5c3QOHRhUgQQijyEaVK-E4yW-WOsaQkq1CWtS_1lGic5GvA/viewform?usp=sharing" target="_blank" class="btn btn-warning mt-3">Form PPDB</a>
+        </div>
+    </div>
+</div>
+ </section>
+   <!--faq-->
+   <section class="faq py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQ - Pertanyaan Umum</h2>
+      <div class="accordion" id="faqAccordion">
+  
+        <!-- FAQ 1: Lokasi Sekolah -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Dimana lokasi SD Kanisius Kaliwinong?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              SD Kanisius Kaliwinong berlokasi di Bandungan, Semarang. Anda dapat melihat lokasi di Google Maps melalui tombol berikut:
+              <br><br>
+              <a href="https://maps.app.goo.gl/rM3DLkPxpNVUrWoX8" target="_blank" class="btn btn-primary">Lihat di Google Maps</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- FAQ 2: Pendaftaran PPDB -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Bagaimana cara mendaftar PPDB?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Pendaftaran PPDB dapat dilakukan secara online melalui website resmi kami. Klik tombol di bawah ini untuk mendaftar:
+              <br><br>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5c3QOHRhUgQQijyEaVK-E4yW-WOsaQkq1CWtS_1lGic5GvA/viewform?usp=sharing" target="_blank" class="btn btn-success">Daftar PPDB</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- FAQ 3: Kontak WhatsApp -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Bagaimana cara menghubungi pihak sekolah?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Anda dapat menghubungi pihak sekolah melalui WhatsApp untuk mendapatkan informasi lebih lanjut. Klik tombol di bawah ini untuk langsung mengirim pesan WhatsApp:
+              <br><br>
+              <a href="https://wa.me/6282243539338" target="_blank" class="btn btn-warning">Hubungi via WhatsApp</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <footer class="bg-dark text-white pt-4">
+    <div class="container">
+      <div class="row">
+        
+        <!-- Menu Navbar -->
+        <div class="col-md-4 mb-3">
+          <h5>Menu</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Beranda</a></li>
+            <li><a href="#tentang" class="text-white text-decoration-none">Tentang kami</a></li>
+            <li><a href="#program" class="text-white text-decoration-none">Program</a></li>
+            <li><a href="#layanan" class="text-blue text-decoration-none">Layanan</a></li>
+          </ul>
+        </div>
+  
+        <!-- Lokasi Sekolah -->
+        <div class="col-md-4">
+          <h5>Lokasi Sekolah</h5>
+          <p>
+            Banyukuning, Jambu, Kaliwinong, Bandungan, Prampelan, Mlilir, Bandungan, Kabupaten Semarang, Jawa Tengah
+          </p>
+          <a href="https://maps.app.goo.gl/rM3DLkPxpNVUrWoX8" target="_blank" class="btn btn-outline-light btn-sm">
+            Lihat di Google Maps
+          </a>
+        </div>
+  
+        <!-- Sosial Media -->
+        <div class="col-md-4">
+          <h5>Ikuti Kami</h5>
+          <a href="https://www.instagram.com/sdkanisius_kaliwinong/?hl=id" target="_blank" class="text-white me-3">
+            <i class="bi bi-instagram fs-4"></i>
+          </a>
+          <a href="https://www.facebook.com/sdkanisius.kaliwinong.7" target="_blank" class="text-white me-3">
+            <i class="bi bi-facebook fs-4"></i>
+          </a>
+          <a href="mailto:info@sekolah.com" class="text-white">
+            <i class="bi bi-envelope fs-4"></i>
+          </a>
+        </div>
+  
+      </div>
+  
+      <!-- Copyright -->
+      <div class="text-center mt-2">
+        <p class="mb-0">© 2025 SD Kanisius Kaliwinong. All Rights Reserved.</p>
+      </div>
+  
+    </div>
+  </footer>
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

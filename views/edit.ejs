@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Siswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background: rgb(19, 92, 86);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        /* Responsif untuk perangkat kecil */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+                padding: 10px;
+                text-align: center;
+            }
+            .sidebar ul {
+                display: flex;
+                justify-content: space-around;
+                padding: 0;
+            }
+            .sidebar ul li {
+                display: inline;
+                margin: 5px;
+            }
+            .sidebar ul li a {
+                font-size: 14px;
+            }
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .navbar-brand {
+                font-size: 16px;
+            }
+            .form-control {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+            </style>
+</head>
+<body>
+   <!-- Sidebar -->
+   <div class="sidebar">
+    <h4 class="text-center">Dashboard</h4>
+    <ul class="nav flex-column">
+        <li class="nav-item"><a href='/' class="nav-link text-white">📊 Absensi</a></li>
+        <li class="nav-item"><a href="" class="nav-link text-white">🚪 Laporan Absen</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <nav class="navbar navbar-light bg-light mb-3 p-3">
+        <span class="navbar-brand mb-0 h1">💚 Edit Data Siswa</span>
+    </nav>
+    
+    <div class="container">
+        <h2>Edit Data Siswa</h2>
+        <form action="/update/data/<%= user1.id %>" method="POST"> <!-- Presuming user1.id is defined -->
+            <div class="mb-3">
+                <label for="nama" class="form-label">Nama Lengkap</label>
+                <input type="text" name="nama" class="form-control" value="<%= user1.nama %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="kelas" class="form-label">Kelas</label>
+                <select name="kelas" class="form-control" required>
+                    <option value="1" <%= user1.kelas == '1' ? 'selected' : '' %>>1</option>
+                    <option value="2" <%= user1.kelas == '2' ? 'selected' : '' %>>2</option>
+                    <option value="3" <%= user1.kelas == '3' ? 'selected' : '' %>>3</option>
+                    <option value="4" <%= user1.kelas == '4' ? 'selected' : '' %>>4</option>
+                    <option value="5" <%= user1.kelas == '5' ? 'selected' : '' %>>5</option>
+                    <option value="6" <%= user1.kelas == '6' ? 'selected' : '' %>>6</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="created_at" class="form-label">Tanggal Dibuat</label>
+                <input type="date" name="created_at" class="form-control" value="<%= new Date().toISOString().split('T')[0] %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="keterangan" class="form-label">Keterangan</label>
+                <select name="keterangan" class="form-control" required>
+                    <option value="Masuk" <%= user1.keterangan == 'Masuk' ? 'selected' : '' %>>Masuk</option>
+                    <option value="Tidak masuk" <%= user1.keterangan == 'Tidak masuk' ? 'selected' : '' %>>Tidak Masuk</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/kelas1" class="btn btn-secondary">Batal</a>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
