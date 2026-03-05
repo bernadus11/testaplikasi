@@ -4,20 +4,19 @@ const bodyParser = require("body-parser");
 const routes = require("./routes/index");
 const app = express();
 const ExcelJS = require('exceljs');
-   const PORT = process.env.PORT || 8000; // Vercel menggunakan PORT yang ditentukan oleh lingkungan
-   
+const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 const db = mysql.createConnection({
-       host: process.env.DB_HOST,
-       database: process.env.DB_NAME,
-       user: process.env.DB_USER,
-       password: process.env.DB_PASSWORD,
-   });
-   
+    host: "localhost",
+    database: "sekolah",
+    user: "root",
+    password: "",
+    port: 3306
+});
 
 db.connect((err) => {
     if (err) throw err;
@@ -75,6 +74,6 @@ app.get('/download-excel', async (req, res) => {
 });
 // Use routes
 app.use('/', routes);
-app.listen(PORT, () => {
-       console.log("Server ready on port " + PORT);
+app.listen(port, () => {
+    console.log("Server ready on port " + port);
 });

@@ -4,6 +4,30 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.render("home", { title: "Beranda" });
 });
+//menampilkan halaman login
+router.get('/login', (req, res) => {
+    res.render("login", { title: "Login" });
+})
+router.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const sql = "SELECT * FROM login WHERE email = ? AND password = ?";
+
+    req.db.query(sql, [email, password], (err, result) => {
+        if (err) {
+            console.error("Query error:", err);
+            return res.status(500).send("Terjadi kesalahan pada server.");
+        }
+
+        if (result.length > 0) {
+            // Login berhasil
+            res.redirect('/kelas1');
+        } else {
+            // Login gagal
+            res.send('<script>alert("Email atau password salah!"); window.location="/login";</script>');
+        }
+    });
+});
+
 // Route for home page
 router.get('/kelas1', (req, res) => {
     const sql = "SELECT id, nama, kelas, DATE(created_at) AS created_at, keterangan FROM user1";
